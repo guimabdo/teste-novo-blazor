@@ -1,0 +1,1 @@
+﻿global using static BlazorApp6.Client.ApiUtils;

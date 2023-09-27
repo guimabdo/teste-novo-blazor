@@ -1,0 +1,23 @@
+﻿@page "/people"
+@attribute [RenderModeWebAssembly]
+@using BlazorApp6.Client.Application.People;
+@using BlazorApp6.Client.Application;
+@inject IGetPerson GetPerson
+<h3>PeoplePage</h3>
+@if(_person == null)
+{
+    <div>Carregando...</div>
+}
+else
+{
+    <div>Pessoa:</div>
+    <div>Id: @_person.Id</div>
+    <div>Nome: @_person.Name</div>
+}
+@code {
+    private PersonDto? _person = null;
+    protected override async Task OnInitializedAsync()
+    {
+        _person = await GetPerson.HandleAsync(new GetPersonRequest(1));
+    }
+}
