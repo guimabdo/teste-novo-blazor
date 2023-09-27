@@ -1,1 +1,1 @@
-# BlazorApp6
+# BlazorApp6 - NET8
